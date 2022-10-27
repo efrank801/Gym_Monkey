@@ -52,23 +52,29 @@ button {
             <h1> Admin Login </h1>
         </span>
     </div>
-    <form>
+    <form method="POST">
         <div class="container">
-            <label>Username : </label>
+            <label>Username: </label>
             <label>
                 <input type="text" placeholder="Enter Username" name="username" required>
             </label>
-            <label>Password : </label>
+            <label>Password: </label>
             <label>
                 <input type="password" placeholder="Enter Password" name="password" required>
             </label>
             <button type="submit">Login</button>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" name="rememberme" value="checked">
             </label> Remember me
             <button type="button" class="cancelbtn"> Cancel</button>
             Forgot <a href="#"> password? </a>
         </div>
     </form>
+    {% if error %}
+        <p class="error">
+        <span style="color: #ff5151; ">
+        <strong>Error:</strong> {{ error }}
+        </span>
+    {% endif %}
 </body>
 </html>
