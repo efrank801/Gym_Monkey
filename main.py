@@ -39,6 +39,7 @@ def login():
 # def user(usr):
 #     return f"<h1>{usr}</h1>"
 
+# session.pop("username", "password", None)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
