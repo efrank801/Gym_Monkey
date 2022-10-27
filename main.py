@@ -20,6 +20,11 @@ class users(db.Model):
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
 
+    def __init__(self, username, password, name):
+        self.username = username
+        self.password = password
+        self.name = name
+
 
 @app.route('/dashboard', methods=["POST", "GET"])
 def dashboard():
