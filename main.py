@@ -1,17 +1,33 @@
-from flask import Flask, render_template, redirect, url_for, request, session
 from datetime import timedelta
+
+from flask import Flask, render_template, redirect, url_for, request, session
+
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.secret_key = "secretkey"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(days=1)
+
+
+db = SQLAlchemy(app)
+
+
+class users(db.Model):
+    _id = db.Column("id", db.Integer, primary_key=True)
+    username = db.Column(db.String(100))
+    password = db.Column(db.String(100))
+    name = db.Column(db.String(100))
 
 
 @app.route('/dashboard', methods=["POST", "GET"])
 def dashboard():
+    # email = None
     if "username" in session:
         if "password" in session:
-            username = session["username"]
-            password = session["password"]
+            # username = session["username"]
+            # password = session["password"]
             return render_template('dashboard.html')
     else:
         return redirect(url_for("login"))
