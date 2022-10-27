@@ -1,8 +1,12 @@
+# Imports
+
 from datetime import timedelta
 
 from flask import Flask, render_template, redirect, url_for, request, session
 
 from flask_sqlalchemy import SQLAlchemy
+
+# Starting Flask Application
 
 app = Flask(__name__)
 app.secret_key = "secretkey"
@@ -10,6 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(days=1)
 
+# Initiating SQL Database
 
 db = SQLAlchemy(app)
 
@@ -26,6 +31,8 @@ class users(db.Model):
         self.name = name
 
 
+# Dashboard Route
+
 @app.route('/dashboard', methods=["POST", "GET"])
 def dashboard():
     # email = None
@@ -37,6 +44,8 @@ def dashboard():
     else:
         return redirect(url_for("login"))
 
+
+# Login Route / Default Route
 
 @app.route('/', methods=["POST", "GET"])
 def login():
@@ -61,6 +70,8 @@ def login():
 #     return f"<h1>{usr}</h1>"
 
 # session.pop("username", "password", None)
+
+# Run
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
