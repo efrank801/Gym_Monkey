@@ -53,7 +53,7 @@ def login():
             return redirect(url_for('dashboard'))
         else:
             error = 'Invalid login. Please try again.'
-    return render_template('login/login.html', error=error)
+    return render_template('login.html', error=error)
 
 
 # @app.route("/<usr>")
