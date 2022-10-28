@@ -20,11 +20,21 @@ An in-depth paragraph about your project and overview of use.
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+
+#### Local Machine
+Make sure to have python3 and pip installed on your machine
 ```
-code blocks for commands
+pip3 install -r requirements.txt
+python3 main.py
 ```
+#### Docker Container
+Make sure to have Docker installed on your machine
+```
+./build_docker_container.sh
+```
+
+Then check [this site](http://127.0.0.1:5000)
+
 
 ## Help
 
@@ -52,4 +62,4 @@ This project is licensed under the MIT License - see the [LICENSE.md]() file for
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* Jared Frank [@JFrank1120](https://github.com/jfrank1120)
+*  [Jared Frank](https://github.com/jfrank1120)
