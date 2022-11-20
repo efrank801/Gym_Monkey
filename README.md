@@ -49,15 +49,14 @@ Ethan Frank [@EFrank801](https://github.com/efrank801)
 
 ## Version History
 
-* 1.0.1
+* 0.0.2
     * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 1.0.0
-    * Initial Release
+* 0.0.1
+    * Initial release
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md]() file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/efrank801/Gym_Monkey/blob/main/LICENSE.md) file for details
 
 ## Acknowledgments
 
