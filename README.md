@@ -35,14 +35,6 @@ Make sure to have Docker installed on your machine
 
 Then check [this site](http://127.0.0.1:5000)
 
-
-## Help
-
-Any advice for common problems or issues.
-```
-command to run if program contains helper info
-```
-
 ## Authors
 
 Ethan Frank [@EFrank801](https://github.com/efrank801)
